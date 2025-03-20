@@ -23,6 +23,8 @@ public:
         for (size_t i = k; i < text.size(); ++i) {
             string context = text.substr(i - k, k);
             char symbol = text[i];
+
+            // Ensure context exists before incrementing
             context_counts[context][symbol]++;
             total_counts[context]++;
             alphabet.insert(symbol);
@@ -31,20 +33,39 @@ public:
 
     double compute_bits(const string &sequence) {
         double total_bits = 0.0;
-        size_t alphabet_size = alphabet.size();
+        size_t alphabet_size = max(alphabet.size(), (size_t)4);  // DNA sequences: {A, C, G, T}
         double smoothing_factor = alpha * alphabet_size;
-
+        double default_prob = 1.0 / (alphabet_size * 10);  // Assign a small probability for unseen contexts
+    
         for (size_t i = k; i < sequence.size(); ++i) {
             string context = sequence.substr(i - k, k);
             char symbol = sequence[i];
-
+    
+            // Check if the context exists in the trained model
+            if (context_counts.find(context) == context_counts.end()) {
+                // Context was not seen in training → Apply a small probability
+                total_bits += -log2(default_prob);
+                continue;
+            }
+    
+            // Apply smoothing
             int count = context_counts[context][symbol] + alpha;
             int total = total_counts[context] + smoothing_factor;
+    
+            if (total <= 0) continue; // Avoid division by zero
+    
             double prob = (double)count / total;
-            total_bits += -log2(prob);
+    
+            // Prevent log2(0) errors
+            if (prob > 0) {
+                total_bits += -log2(prob);
+            } else {
+                cerr << "Warning: Encountered zero probability for context: " << context << " and symbol: " << symbol << endl;
+            }
         }
+    
         return total_bits;
-    }
+    }    
 };
 
 // Function to read the metagenomic sample (y)
@@ -68,7 +89,7 @@ vector<pair<string, string>> read_reference_database(const string &filename) {
     }
     vector<pair<string, string>> sequences;
     string line, name, sequence;
-    
+
     while (getline(file, line)) {
         if (line.empty()) continue;
         if (line[0] == '@') {  // Name identifier
@@ -84,15 +105,29 @@ vector<pair<string, string>> read_reference_database(const string &filename) {
     if (!name.empty()) { 
         sequences.emplace_back(name, sequence);
     }
-    
+
     file.close();
     return sequences;
 }
 
 // Compute NRC for a given sequence
 double compute_nrc(const string &sequence, FCM &model) {
+    if (sequence.empty()) {
+        cerr << "Warning: Encountered an empty sequence, skipping NRC computation.\n";
+        return NAN;
+    }
+
     double bits = model.compute_bits(sequence);
-    return bits / (2 * sequence.size());
+
+    // Avoid division by zero
+    if (sequence.size() == 0) return NAN;
+
+    double nrc = bits / (2 * sequence.size());
+
+    // Debugging Output
+    cout << "Sequence Length: " << sequence.size() << " | Bits: " << bits << " | NRC: " << nrc << endl;
+
+    return nrc;
 }
 
 int main(int argc, char *argv[]) {
@@ -120,10 +155,16 @@ int main(int argc, char *argv[]) {
 
     for (const auto &[name, sequence] : reference_sequences) {
         double nrc = compute_nrc(sequence, model);
-        nrc_scores.emplace_back(name, nrc);
+
+        // Skip NaN or infinite values
+        if (!isnan(nrc) && isfinite(nrc)) {
+            nrc_scores.emplace_back(name, nrc);
+        } else {
+            cerr << "Skipping sequence " << name << " due to invalid NRC value." << endl;
+        }
     }
 
-    // Step 3: Sort and print the top 20 matches
+    // Step 3: Sort and print the top N matches
     sort(nrc_scores.begin(), nrc_scores.end(), [](const auto &a, const auto &b) {
         return a.second < b.second; // Lower NRC means higher similarity
     });
