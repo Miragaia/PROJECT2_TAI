@@ -14,5 +14,5 @@ First Year - MEI - 2nd Semester Class (Universidade de Aveiro) - Algorithmic The
 ```bash
 g++ -o MetaClass MetaClass.cpp -std=c++17 -O2
 
-./MetaClass -d db.txt -s meta.txt -k 10 -a 0.1 -t 20
+./MetaClass -d db.txt -s meta.txt -k 10 -a 5 -t 20
 ```
