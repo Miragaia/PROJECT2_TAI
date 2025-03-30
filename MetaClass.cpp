@@ -1,177 +1,96 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
 #include <unordered_map>
 #include <unordered_set>
-#include <vector>
+#include <algorithm>
 #include <cmath>
 #include <iomanip>
-#include <algorithm>
+
+#include "load_database.h"
+#include "fcm.h"
+#include "load_sample.h"
 
 using namespace std;
 
-class FCM {
-public:
-    int k;
-    double alpha;
-    unordered_map<string, unordered_map<char, int>> context_counts;
-    unordered_map<string, int> total_counts;
-    unordered_set<char> alphabet;
-
-    FCM(int k, double alpha) : k(k), alpha(alpha) {}
-
-    void train(const string &text) {
-        for (size_t i = k; i < text.size(); ++i) {
-            string context = text.substr(i - k, k);
-            char symbol = text[i];
-
-            // Ensure context exists before incrementing
-            context_counts[context][symbol]++;
-            total_counts[context]++;
-            alphabet.insert(symbol);
-        }
-    }
-
-    double compute_bits(const string &sequence) {
-        double total_bits = 0.0;
-        size_t alphabet_size = max(alphabet.size(), (size_t)4);  // DNA sequences: {A, C, G, T}
-        double smoothing_factor = alpha * alphabet_size;
-        double default_prob = 1.0 / (alphabet_size * 10);  // Assign a small probability for unseen contexts
-    
-        for (size_t i = k; i < sequence.size(); ++i) {
-            string context = sequence.substr(i - k, k);
-            char symbol = sequence[i];
-    
-            // Check if the context exists in the trained model
-            if (context_counts.find(context) == context_counts.end()) {
-                // Context was not seen in training → Apply a small probability
-                total_bits += -log2(default_prob);
-                continue;
-            }
-    
-            // Apply smoothing
-            int count = context_counts[context][symbol] + alpha;
-            int total = total_counts[context] + smoothing_factor;
-    
-            if (total <= 0) continue; // Avoid division by zero
-    
-            double prob = (double)count / total;
-    
-            // Prevent log2(0) errors
-            if (prob > 0) {
-                total_bits += -log2(prob);
-            } else {
-                cerr << "Warning: Encountered zero probability for context: " << context << " and symbol: " << symbol << endl;
-            }
-        }
-    
-        return total_bits;
-    }    
-};
-
-// Function to read the metagenomic sample (y)
-string read_metagenomic_sample(const string &filename) {
-    ifstream file(filename);
-    if (!file) {
-        cerr << "Error opening file " << filename << endl;
-        exit(1);
-    }
-    string sample((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
-    file.close();
-    return sample;
-}
-
-// Function to read the reference database (xi)
-vector<pair<string, string>> read_reference_database(const string &filename) {
-    ifstream file(filename);
-    if (!file) {
-        cerr << "Error opening file " << filename << endl;
-        exit(1);
-    }
-    vector<pair<string, string>> sequences;
-    string line, name, sequence;
-
-    while (getline(file, line)) {
-        if (line.empty()) continue;
-        if (line[0] == '@') {  // Name identifier
-            if (!name.empty()) {
-                sequences.emplace_back(name, sequence);
-            }
-            name = line.substr(1); // Remove '@'
-            sequence.clear();
-        } else {
-            sequence += line; // Append sequence data
-        }
-    }
-    if (!name.empty()) { 
-        sequences.emplace_back(name, sequence);
-    }
-
-    file.close();
-    return sequences;
-}
-
-// Compute NRC for a given sequence
-double compute_nrc(const string &sequence, FCM &model) {
-    if (sequence.empty()) {
-        cerr << "Warning: Encountered an empty sequence, skipping NRC computation.\n";
-        return NAN;
-    }
-
-    double bits = model.compute_bits(sequence);
-
-    // Avoid division by zero
-    if (sequence.size() == 0) return NAN;
-
-    double nrc = bits / (2 * sequence.size());
-
-    // Debugging Output
-    cout << "Sequence Length: " << sequence.size() << " | Bits: " << bits << " | NRC: " << nrc << endl;
-
-    return nrc;
-}
-
 int main(int argc, char *argv[]) {
-    if (argc < 6) {
-        cerr << "Usage: ./MetaClass -d <db.txt> -s <meta.txt> -k <order> -a <alpha> -t <top_N>\n";
+    if (argc < 7) {
+        cerr << "Usage: " << argv[0] << " -d <db_file> -s <sample_file> -k <order> -a <alpha> -t <top_n>\n";
         return 1;
     }
 
-    string db_file = argv[2];
-    string meta_file = argv[4];
-    int k = stoi(argv[6]);
-    double alpha = stod(argv[8]);
-    int top_N = stoi(argv[10]);
+    string db_filename, sample_filename;
+    int k = 0, top_n = 0;
+    double alpha = 0.0;
 
-    // Step 1: Train model on metagenomic sample
-    cout << "Training model on metagenomic sample..." << endl;
-    string metagenomic_sample = read_metagenomic_sample(meta_file);
-    FCM model(k, alpha);
-    model.train(metagenomic_sample);
-
-    // Step 2: Compute NRC scores for reference database
-    cout << "Computing NRC scores..." << endl;
-    vector<pair<string, double>> nrc_scores;
-    vector<pair<string, string>> reference_sequences = read_reference_database(db_file);
-
-    for (const auto &[name, sequence] : reference_sequences) {
-        double nrc = compute_nrc(sequence, model);
-
-        // Skip NaN or infinite values
-        if (!isnan(nrc) && isfinite(nrc)) {
-            nrc_scores.emplace_back(name, nrc);
-        } else {
-            cerr << "Skipping sequence " << name << " due to invalid NRC value." << endl;
+    for (int i = 1; i < argc; i += 2) {
+        if (i + 1 >= argc) {
+            cerr << "Missing value for parameter " << argv[i] << endl;
+            return 1;
+        }
+        
+        string arg = argv[i];
+        if (arg == "-d") db_filename = argv[i + 1];
+        else if (arg == "-s") sample_filename = argv[i + 1];
+        else if (arg == "-k") k = stoi(argv[i + 1]);
+        else if (arg == "-a") alpha = stod(argv[i + 1]);
+        else if (arg == "-t") top_n = stoi(argv[i + 1]);
+        else {
+            cerr << "Unknown parameter: " << arg << endl;
+            return 1;
         }
     }
 
-    // Step 3: Sort and print the top N matches
-    sort(nrc_scores.begin(), nrc_scores.end(), [](const auto &a, const auto &b) {
-        return a.second < b.second; // Lower NRC means higher similarity
-    });
+    // Validate parameters
+    if (db_filename.empty() || sample_filename.empty() || k <= 0 || alpha <= 0 || top_n <= 0) {
+        cerr << "Invalid parameters" << endl;
+        return 1;
+    }
 
-    cout << "Top " << top_N << " matches based on NRC:\n";
-    for (int i = 0; i < min(top_N, (int)nrc_scores.size()); ++i) {
-        cout << i + 1 << ". " << nrc_scores[i].first << " - NRC: " << fixed << setprecision(6) << nrc_scores[i].second << endl;
+    cout << "Loading metagenomic sample from " << sample_filename << "..." << endl;
+    string meta_text = load_sample(sample_filename);
+    cout << "Sample loaded: " << meta_text.length() << " base pairs" << endl;
+
+    // Train model on meta.txt (the sample)
+    cout << "Training model on metagenomic sample..." << endl;
+    FCM model(k, alpha);
+    model.train(meta_text);
+    cout << "Model training complete." << endl;
+
+    // Load database sequences
+    cout << "Loading reference database from " << db_filename << "..." << endl;
+    vector<pair<string, string>> db_sequences = load_database(db_filename);
+    cout << "Database loaded: " << db_sequences.size() << " sequences" << endl;
+
+    // Compute NRC for each sequence in the database
+    cout << "Computing NRC for database sequences..." << endl;
+    vector<pair<double, string>> nrc_results; // Pair of (NRC, identifier)
+    
+    for (const auto &entry : db_sequences) {
+        string id = entry.first;
+        string seq = entry.second;
+        
+        cout << "Processing: " << id << " (" << seq.length() << " bp)";
+        
+        double nrc = model.compute_nrc(seq);
+        nrc_results.emplace_back(nrc, id);
+        
+        cout << " - NRC: " << fixed << setprecision(6) << nrc << endl;
+    }
+
+    // Sort by NRC (ascending, lower is better)
+    sort(nrc_results.begin(), nrc_results.end());
+
+    // Output top N
+    cout << "\nTop " << top_n << " similar sequences based on NRC:\n";
+    cout << "Rank\tNRC Value\tSequence ID\n";
+    cout << "----------------------------------------\n";
+    
+    int limit = min(top_n, (int)nrc_results.size());
+    for (int i = 0; i < limit; ++i) {
+        cout << i + 1 << "\t" << fixed << setprecision(6) << nrc_results[i].first 
+             << "\t" << nrc_results[i].second << endl;
     }
 
     return 0;
