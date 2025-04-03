@@ -35,3 +35,9 @@
 .vscode/*
 
 MetaClass
+
+# venv
+venv/
+
+# .vscode
+.vscode/
