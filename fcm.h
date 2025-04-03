@@ -47,17 +47,15 @@ class FCM {
                 std::string context = x.substr(i - k, k);
                 char symbol = x[i];
     
-                // Handle case when context or symbol doesn't exist in the model
-                int count = (context_counts.find(context) != context_counts.end() && 
-                           context_counts[context].find(symbol) != context_counts[context].end()) 
-                           ? context_counts[context][symbol] + alpha 
-                           : alpha; // Just use alpha for unseen symbols
+                // Get the count of the symbol in the context
+                int count = context_counts[context][symbol];
+
+                // Get the total count of symbols in the context
+                int total = total_counts[context];
                 
-                int total = (total_counts.find(context) != total_counts.end()) 
-                          ? total_counts[context] + smoothing_factor 
-                          : smoothing_factor; // Handle unseen contexts
-                
-                double prob = static_cast<double>(count) / total;
+                double prob = static_cast<double>(count + smoothing_factor) /
+                              (total + smoothing_factor * alphabet_size);
+                              
                 total_bits += -std::log2(prob); // Bits = -log2(probability)
             }
             
