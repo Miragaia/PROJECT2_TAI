@@ -64,5 +64,16 @@ python3 visualize_results.py results.json -d output_plots
 ```
 - `-d`: Directory to store output plots.
 
+
+### Run Complexity Profile
+```bash
+g++ -o ComplexityProfile ComplexityProfile.cpp -std=c++17 -O2
+```
+
+```bash
+./ComplexityProfile -d db.txt -s meta.txt -k 3 -a 0.1 -t 20
+```
+- Run complexity.py to generate the complexity profile graph
+
 ---
 

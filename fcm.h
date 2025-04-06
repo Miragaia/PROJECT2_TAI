@@ -77,4 +77,27 @@ class FCM {
             
             return nrc;
         }
+
+        // **NEW FUNCTION**: Computes complexity per base
+        std::vector<double> compute_complexity_profile(const std::string &seq) {
+            std::vector<double> profile(seq.size(), 0.0);
+            size_t alphabet_size = alphabet.size();
+            if (alphabet_size == 0) alphabet_size = 4; 
+            double smoothing_factor = alpha * alphabet_size;
+
+            for (size_t i = k; i < seq.size(); ++i) {
+                std::string context = seq.substr(i - k, k);
+                char symbol = seq[i];
+
+                int count = context_counts[context][symbol];
+                int total = total_counts[context];
+                
+                double prob = static_cast<double>(count + smoothing_factor) /
+                              (total + smoothing_factor * alphabet_size);
+                
+                profile[i] = -std::log2(prob);  // Store complexity per base
+            }
+            
+            return profile;
+        }
     };
