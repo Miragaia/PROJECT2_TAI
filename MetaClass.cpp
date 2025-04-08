@@ -157,7 +157,7 @@ int main(int argc, char *argv[]) {
             profile_file << "Position,Complexity,SequenceID\n";
 
             for (size_t i = 0; i < complexity_values.size(); i++) {
-                profile_file << i << "," << complexity_values[i] << "," << id << "\n";
+                profile_file << i << "," << complexity_values[i] << ",\"" << id << "\"\n";
             }
 
             profile_file.close();
