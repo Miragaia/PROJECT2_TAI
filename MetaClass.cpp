@@ -125,7 +125,10 @@ int main(int argc, char *argv[]) {
             matrix_output = argv[++i];
             generate_matrix = true;
         }
-        else if (arg == "-cp") generate_profile = true;
+        else if (arg == "-cp" && i + 1 < argc) {
+            generate_profile = true;
+        }
+        
         else {
             cerr << "Unknown or incomplete parameter: " << arg << endl;
             return 1;
@@ -196,9 +199,15 @@ int main(int argc, char *argv[]) {
         string output_dir = "complexity_profile";
         if (!filesystem::exists(output_dir)) {
             filesystem::create_directory(output_dir);
+        } else {
+            // Clear all existing files in the directory
+            for (const auto& entry : filesystem::directory_iterator(output_dir)) {
+                filesystem::remove(entry.path());
+            }
+            cout << "Cleared existing files in '" << output_dir << "' directory." << endl;
         }
 
-        for (const auto &entry : db_sequences) {
+        for (const auto &entry : top_sequences) {
             string id = entry.first;
             string seq = entry.second;
 
@@ -213,10 +222,10 @@ int main(int argc, char *argv[]) {
             string filepath = output_dir + "/" + filename;
 
             ofstream profile_file(filepath);
-            profile_file << "Position,Complexity,SequenceID\n";
+            profile_file << "Position,Complexity,SequenceID,K\n";
 
             for (size_t i = 0; i < complexity_values.size(); i++) {
-                profile_file << i << "," << complexity_values[i] << ",\"" << id << "\"\n";
+                profile_file << i << "," << complexity_values[i] << ",\"" << id << "\"," << k << "\n";
             }
 
             profile_file.close();

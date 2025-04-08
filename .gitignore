@@ -41,3 +41,6 @@ venv/
 
 # .vscode
 .vscode/
+
+complexity_profile/
+complexity_profile_plot/

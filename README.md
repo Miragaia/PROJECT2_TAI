@@ -27,7 +27,7 @@ g++ -o MetaClass MetaClass.cpp -std=c++17 -O2
 
 ### Run
 ```bash
-./MetaClass -d db.txt -s meta.txt -k 14 -a 0.1 -t 20 -c similarity_matrix.csv
+./MetaClass -cp -d db.txt -s meta.txt -k 14 -a 0.1 -t 20 -c similarity_matrix.csv
 ```
 
 Arguments:
@@ -37,6 +37,7 @@ Arguments:
 - `-a`: Alpha smoothing parameter.
 - `-t`: Number of top matches to display.
 - `-c`: Output CSV file for similarity matrix.
+- `-cp`: Flag to generate complexity profiles.
 
 ---
 
@@ -73,5 +74,10 @@ python3 visualize_results.py results.json -d output_plots
 ### Visualize Sequence Similarity
 ```bash
 python3 sequence_similarity.py similarity_matrix/similarity_matrix.csv
+```
+
+### Visualize Complexity profiles
+```bash
+python3 complexity.py
 ```
 
