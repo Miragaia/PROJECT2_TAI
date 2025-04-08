@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <cmath>
 #include <iomanip>
+#include <sstream>
 
 #include "load_database.h"
 #include "fcm.h"
@@ -14,15 +15,92 @@
 
 using namespace std;
 
+// Function to write matrix data to CSV for external visualization
+void write_similarity_matrix_to_csv(const vector<pair<string, string>>& sequences, 
+    const vector<vector<double>>& matrix, 
+    const string& output_file) {
+    ofstream outfile(output_file);
+    if (!outfile) {
+        cerr << "Error: Could not open file " << output_file << " for writing." << endl;
+        return;
+    }
+
+    // Write header row with sequence IDs
+    outfile << "Sequence";
+    for (const auto& seq : sequences) {
+        // Quote the sequence ID to handle commas and other special characters
+        outfile << ",\"" << seq.first << "\"";
+    }
+    outfile << endl;
+
+    // Write matrix rows
+    for (size_t i = 0; i < sequences.size(); ++i) {
+        // Quote the sequence ID
+        outfile << "\"" << sequences[i].first << "\"";
+        for (size_t j = 0; j < sequences.size(); ++j) {
+            outfile << "," << fixed << setprecision(6) << matrix[i][j];
+        }
+        outfile << endl;
+    }
+
+    outfile.close();
+    cout << "Similarity matrix saved to " << output_file << endl;
+}
+
+// Function to calculate similarity matrix for top sequences
+void generate_similarity_matrix(const vector<pair<string, string>>& sequences, 
+    int k, double alpha, const string& output_file) {
+    int limit = sequences.size();
+    cout << "Generating similarity matrix for " << limit << " sequences..." << endl;
+
+    // Pre-train FCM models for each sequence to avoid redundant training
+    vector<FCM> trained_models;
+    for (const auto& seq_pair : sequences) {
+        FCM model(k, alpha);
+        model.train(seq_pair.second);
+        trained_models.push_back(model);
+    }
+
+    // Initialize matrix with zeros
+    vector<vector<double>> similarity_matrix(limit, vector<double>(limit, 0.0));
+
+    // Calculate NRC for each pair of sequences using pre-trained models
+    for (int i = 0; i < limit; ++i) {
+        cout << "Processing sequence " << i+1 << "/" << limit << ": " << sequences[i].first << endl;
+
+        // Set diagonal element using self-comparison
+        similarity_matrix[i][i] = trained_models[i].compute_nrc(sequences[i].second);
+
+        for (int j = i+1; j < limit; ++j) {
+            // Use trained model i to compute NRC for sequence j
+            similarity_matrix[i][j] = trained_models[i].compute_nrc(sequences[j].second);
+
+            // Use trained model j to compute NRC for sequence i
+            similarity_matrix[j][i] = trained_models[j].compute_nrc(sequences[i].second);
+        }
+    }
+
+    // Write matrix to CSV
+    write_similarity_matrix_to_csv(sequences, similarity_matrix, output_file);
+}
+
+// Function to calculate NRC between sequences using the FCM model
+double calculate_nrc(const string& seq1, const string& seq2, int k, double alpha) {
+    FCM model(k, alpha);
+    model.train(seq1);
+    return model.compute_nrc(seq2);
+}
+
 int main(int argc, char *argv[]) {
     if (argc < 7) {
         cerr << "Usage: " << argv[0] << " -d <db_file> -s <sample_file> -k <order> -a <alpha> -t <top_n> [-c <matrix_output_file>]\n";
         return 1;
     }
 
-    string db_filename, sample_filename, compareMatrixFile;
+    string db_filename, sample_filename, matrix_output = "similarity_matrix.csv";
     int k = 0, top_n = 0;
     double alpha = 0.0;
+    bool generate_matrix = false;
 
     for (int i = 1; i < argc; ++i) {
         string arg = argv[i];
@@ -31,7 +109,10 @@ int main(int argc, char *argv[]) {
         else if (arg == "-k" && i + 1 < argc) k = stoi(argv[++i]);
         else if (arg == "-a" && i + 1 < argc) alpha = stod(argv[++i]);
         else if (arg == "-t" && i + 1 < argc) top_n = stoi(argv[++i]);
-        else if (arg == "-c" && i + 1 < argc) compareMatrixFile = argv[++i];
+        else if (arg == "-c" && i + 1 < argc) {
+            matrix_output = argv[++i];
+            generate_matrix = true;
+        }
         else {
             cerr << "Unknown or incomplete parameter: " << arg << endl;
             return 1;
@@ -93,41 +174,9 @@ int main(int argc, char *argv[]) {
         top_sequences.emplace_back(nrc_results[i].second, id_to_seq[nrc_results[i].second]);
     }
 
-    // Optional: compare top N sequences with each other
-    if (!compareMatrixFile.empty()) {
-        ofstream out(compareMatrixFile);
-        if (!out) {
-            cerr << "Error: Cannot open file " << compareMatrixFile << " for writing.\n";
-            return 1;
-        }
-
-        // CSV header
-        out << "ID";
-        for (const auto& entry : top_sequences) {
-            out << ",\"" << entry.first << "\"";
-        }
-        out << "\n";
-
-        for (size_t i = 0; i < top_sequences.size(); ++i) {
-            const auto& ref_id = top_sequences[i].first;
-            const auto& ref_seq = top_sequences[i].second;
-
-            out << "\"" << ref_id << "\"";
-
-            // Train model on reference sequence
-            FCM ref_model(k, alpha);
-            ref_model.train(ref_seq);
-
-            for (size_t j = 0; j < top_sequences.size(); ++j) {
-                const auto& target_seq = top_sequences[j].second;
-                double nrc = ref_model.compute_nrc(target_seq);
-                out << "," << fixed << setprecision(6) << nrc;
-            }
-            out << "\n";
-        }
-
-        out.close();
-        cout << "\nNRC comparison matrix saved to: " << compareMatrixFile << endl;
+    // Generate similarity matrix if requested
+    if (generate_matrix) {
+        generate_similarity_matrix(top_sequences, k, alpha, matrix_output);
     }
 
     return 0;

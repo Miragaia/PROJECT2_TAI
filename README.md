@@ -1,79 +1,92 @@
 # PROJECT2_TAI
 
-## First Year - MEI - 2nd Semester Class (Universidade de Aveiro)  
-### Algorithmic Theory of Information
+## Algorithmic Theory of Information — 1st Year MEI (2nd Semester)  
+University of Aveiro
 
-This project implements a finite-context model (FCM) for DNA sequence similarity analysis. It trains a model on reference sequences, then evaluates and ranks DNA sequences based on compression efficiency.
+This project implements a Finite-Context Model (FCM) for DNA sequence similarity analysis. The model is trained on reference sequences and used to evaluate and rank DNA sequences based on their compression efficiency.
 
 ---
 
-## How It Works:
+## How It Works
 
-1. **Model Training:** Trains a finite-context model (FCM) using `meta.txt`.
-2. **Model Freezing:** Prevents further learning after training.
-3. **Sequence Extraction:** Reads DNA sequences and their names from `db.txt`.
-4. **Compression Calculation:** Computes the number of bits required to encode each sequence.
+1. **Model Training:** Builds an FCM using sequences from `meta.txt`.
+2. **Model Freezing:** Locks the model to prevent further learning.
+3. **Sequence Extraction:** Loads DNA sequences and labels from `db.txt`.
+4. **Compression Calculation:** Computes the number of bits needed to encode each sequence using the trained model.
 5. **NRC Score Computation:** Calculates Normalized Relative Compression (NRC) scores.
-6. **Sorting & Output:** Sorts sequences in ascending NRC order (lower NRC = higher similarity) and prints the top 20 matches.
+6. **Sorting & Output:** Sorts sequences by ascending NRC score (lower NRC = higher similarity) and displays the top matches.
 
 ---
 
-## Compilation & Execution
+## Compilation and Execution
 
-### Compile:
+### Compile
 ```bash
- g++ -o MetaClass MetaClass.cpp -std=c++17 -O2
+g++ -o MetaClass MetaClass.cpp -std=c++17 -O2
 ```
 
-### Run:
+### Run
 ```bash
- ./MetaClass -d db.txt -s meta.txt -k 3 -a 0.1 -t 20
+./MetaClass -d db.txt -s meta.txt -k 14 -a 0.1 -t 20 -c similarity_matrix.csv
 ```
+
+Arguments:
 - `-d`: Database file containing DNA sequences.
 - `-s`: Meta file for training.
-- `-k`: Context length.
+- `-k`: Context length (k-mer size).
 - `-a`: Alpha smoothing parameter.
 - `-t`: Number of top matches to display.
+- `-c`: Output CSV file for similarity matrix.
 
 ---
 
-## Running Tests & Generating Plots
+## Running Tests and Generating Plots
 
-### Setup Virtual Environment:
+### Setup Python Virtual Environment
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Install Requirements:
+### Install Requirements
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run Experiments:
+### Run Experiments
 ```bash
 python3 save_results.py -d db.txt -s meta.txt --k_values 3,4,5,6,7,8 --alpha_values 0.01,0.1,1.0 -o results.json
 ```
+
+Options:
 - `--k_values`: List of k-values to test.
 - `--alpha_values`: List of alpha values to test.
 - `-o`: Output file to save results.
 
-### Visualize Results:
+### Visualize Results
 ```bash
 python3 visualize_results.py results.json -d output_plots
 ```
+
 - `-d`: Directory to store output plots.
 
+### Visualize Sequence Similarity
+```bash
+python3 sequence_similarity.py similarity_matrix.csv
+```
 
-### Run Complexity Profile
+---
+
+## Run Complexity Profile
+
+### Compile
 ```bash
 g++ -o ComplexityProfile ComplexityProfile.cpp -std=c++17 -O2
 ```
 
+### Run
 ```bash
 ./ComplexityProfile -d db.txt -s meta.txt -k 3 -a 0.1 -t 20
 ```
-- Run complexity.py to generate the complexity profile graph
 
----
-
+- Run `complexity.py` to generate the complexity profile graph.
