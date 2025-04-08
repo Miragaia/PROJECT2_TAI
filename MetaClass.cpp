@@ -20,9 +20,19 @@ using namespace std;
 void write_similarity_matrix_to_csv(const vector<pair<string, string>>& sequences, 
     const vector<vector<double>>& matrix, 
     const string& output_file) {
-    ofstream outfile(output_file);
+    
+    // Create directory if it doesn't exist
+    string directory = "similarity_matrix";
+    if (!filesystem::exists(directory)) {
+        filesystem::create_directory(directory);
+    }
+    
+    // Combine directory and filename
+    string full_path = directory + "/" + output_file;
+    
+    ofstream outfile(full_path);
     if (!outfile) {
-        cerr << "Error: Could not open file " << output_file << " for writing." << endl;
+        cerr << "Error: Could not open file " << full_path << " for writing." << endl;
         return;
     }
 
@@ -45,7 +55,7 @@ void write_similarity_matrix_to_csv(const vector<pair<string, string>>& sequence
     }
 
     outfile.close();
-    cout << "Similarity matrix saved to " << output_file << endl;
+    cout << "Similarity matrix saved to " << full_path << endl;
 }
 
 // Function to calculate similarity matrix for top sequences

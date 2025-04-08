@@ -55,10 +55,22 @@ def main():
         return
         
     csv_file = sys.argv[1]
-    output_prefix = sys.argv[2] if len(sys.argv) > 2 else "similarity_matrix"
     
-    # Load similarity matrix with proper quoting
+    # Get the directory of the input file
+    file_dir = os.path.dirname(csv_file)
+    
+    # Define output prefix based on input file name but in the same directory
+    file_name = os.path.basename(csv_file)
+    base_name = os.path.splitext(file_name)[0]
+    output_prefix = os.path.join(file_dir, base_name)
+    
+    if len(sys.argv) > 2:
+        # If user specified a prefix, use it (but still in the same directory)
+        custom_prefix = sys.argv[2]
+        output_prefix = os.path.join(file_dir, custom_prefix)
+    
     print(f"Loading similarity matrix from {csv_file}...")
+    print(f"Output files will be saved to the folder: {file_dir}")
     
     try:
         # Try with default parameters first
@@ -91,7 +103,7 @@ def main():
     
     print("\nDone! Visualization files created:")
     print(f"1. {output_prefix}_heatmap.png - Standard heatmap")
-    print(f"3. {output_prefix}_key.csv - Key file mapping numbers to sequence IDs")
+    print(f"2. {output_prefix}_key.csv - Key file mapping numbers to sequence IDs")
     print("\nUse the key file to reference the full sequence names.")
 
 if __name__ == "__main__":
