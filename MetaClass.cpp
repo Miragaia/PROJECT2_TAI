@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <cmath>
 #include <iomanip>
+#include <filesystem> 
 
 #include "load_database.h"
 #include "fcm.h"
@@ -23,6 +24,7 @@ int main(int argc, char *argv[]) {
     string db_filename, sample_filename, compareMatrixFile;
     int k = 0, top_n = 0;
     double alpha = 0.0;
+    bool generate_profile = false;
 
     for (int i = 1; i < argc; ++i) {
         string arg = argv[i];
@@ -32,6 +34,7 @@ int main(int argc, char *argv[]) {
         else if (arg == "-a" && i + 1 < argc) alpha = stod(argv[++i]);
         else if (arg == "-t" && i + 1 < argc) top_n = stoi(argv[++i]);
         else if (arg == "-c" && i + 1 < argc) compareMatrixFile = argv[++i];
+        else if (arg == "-cp") generate_profile = true;
         else {
             cerr << "Unknown or incomplete parameter: " << arg << endl;
             return 1;
@@ -128,6 +131,39 @@ int main(int argc, char *argv[]) {
 
         out.close();
         cout << "\nNRC comparison matrix saved to: " << compareMatrixFile << endl;
+    }
+
+    if (generate_profile) {
+        string output_dir = "complexity_profile";
+        if (!filesystem::exists(output_dir)) {
+            filesystem::create_directory(output_dir);
+        }
+
+        for (const auto &entry : db_sequences) {
+            string id = entry.first;
+            string seq = entry.second;
+
+            cout << "Processing: " << id << " (" << seq.length() << " bp)" << endl;
+
+            vector<double> complexity_values = model.compute_complexity_profile(seq);
+
+            string filename = "complexity_" + id + ".csv";
+            replace(filename.begin(), filename.end(), ' ', '_');
+            replace(filename.begin(), filename.end(), '/', '_');
+
+            string filepath = output_dir + "/" + filename;
+
+            ofstream profile_file(filepath);
+            profile_file << "Position,Complexity,SequenceID\n";
+
+            for (size_t i = 0; i < complexity_values.size(); i++) {
+                profile_file << i << "," << complexity_values[i] << "," << id << "\n";
+            }
+
+            profile_file.close();
+        }
+
+        cout << "\nComplexity profiles saved to '" << output_dir << "' directory.\n";
     }
 
     return 0;
