@@ -78,7 +78,7 @@ class FCM {
             return nrc;
         }
 
-        // **NEW FUNCTION**: Computes complexity per base
+        //Computes complexity per base
         std::vector<double> compute_complexity_profile(const std::string &seq) {
             std::vector<double> profile(seq.size(), 0.0);
             size_t alphabet_size = alphabet.size();
