@@ -3,7 +3,7 @@
     "db_file": "db.txt",
     "sample_file": "meta.txt",
     "top_n": 10,
-    "timestamp": "2025-04-08T20:03:32.936653"
+    "timestamp": "2025-04-10T14:49:17.442429"
   },
   "parameters": {
     "k_values": [
@@ -12,10 +12,18 @@
       5,
       6,
       7,
-      8
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
     ],
     "alpha_values": [
       0.01,
+      0.05,
       0.1,
       1.0
     ]
@@ -66,6 +74,58 @@
         {
           "rank": 9,
           "nrc": 0.972031,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.973037,
+          "sequence_id": "gi|33300797|ref|NC_005046.1| Ageratum leaf curl disease associated sequence virion, complete genome"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.939486,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.939877,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.942812,
+          "sequence_id": "gi|12084983|ref|NC_002642.1| Yaba-like disease virus, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.965818,
+          "sequence_id": "gi|66396483|ref|NC_007067.1| Ageratum yellow vein China virus-associated DNA beta, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.968546,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.968911,
+          "sequence_id": "gi|1008861384|ref|NC_005030.2| Tobacco leaf curl Yunnan virus satellite DNA beta clone 17, complete sequence"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.969004,
+          "sequence_id": "gi|163869641|ref|NC_004037.2| Ovine adenovirus 7, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.969261,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.972032,
           "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
         },
         {
@@ -232,6 +292,58 @@
           "sequence_id": "gi|62327499|ref|NC_006935.1| Cotton leaf curl Gezira virus-associated DNA beta isolate CLC55-C, complete sequence"
         }
       ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.937895,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.939785,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.942474,
+          "sequence_id": "gi|12084983|ref|NC_002642.1| Yaba-like disease virus, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.966858,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.967496,
+          "sequence_id": "gi|66396483|ref|NC_007067.1| Ageratum yellow vein China virus-associated DNA beta, complete genome"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.96764,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.968872,
+          "sequence_id": "gi|163869641|ref|NC_004037.2| Ovine adenovirus 7, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.969921,
+          "sequence_id": "gi|1008861384|ref|NC_005030.2| Tobacco leaf curl Yunnan virus satellite DNA beta clone 17, complete sequence"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.96997,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.973525,
+          "sequence_id": "gi|62327499|ref|NC_006935.1| Cotton leaf curl Gezira virus-associated DNA beta isolate CLC55-C, complete sequence"
+        }
+      ],
       "alpha=0.1": [
         {
           "rank": 1,
@@ -387,6 +499,58 @@
         {
           "rank": 10,
           "nrc": 0.976398,
+          "sequence_id": "gi|1013949521|ref|NC_029798.1| Iris yellow spot virus segment M, complete sequence"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.93608,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.941213,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.943887,
+          "sequence_id": "gi|12084983|ref|NC_002642.1| Yaba-like disease virus, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.965273,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.96797,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.96875,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.97169,
+          "sequence_id": "gi|66396483|ref|NC_007067.1| Ageratum yellow vein China virus-associated DNA beta, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.97209,
+          "sequence_id": "gi|163869641|ref|NC_004037.2| Ovine adenovirus 7, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.973766,
+          "sequence_id": "gi|1008861384|ref|NC_005030.2| Tobacco leaf curl Yunnan virus satellite DNA beta clone 17, complete sequence"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.976397,
           "sequence_id": "gi|1013949521|ref|NC_029798.1| Iris yellow spot virus segment M, complete sequence"
         }
       ],
@@ -548,6 +712,58 @@
           "sequence_id": "gi|66396483|ref|NC_007067.1| Ageratum yellow vein China virus-associated DNA beta, complete genome"
         }
       ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.926477,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.946766,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.950297,
+          "sequence_id": "gi|12084983|ref|NC_002642.1| Yaba-like disease virus, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.957267,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.958253,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.971195,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.981056,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.981855,
+          "sequence_id": "gi|163869641|ref|NC_004037.2| Ovine adenovirus 7, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.985054,
+          "sequence_id": "gi|1013949521|ref|NC_029798.1| Iris yellow spot virus segment M, complete sequence"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.987497,
+          "sequence_id": "gi|66396483|ref|NC_007067.1| Ageratum yellow vein China virus-associated DNA beta, complete genome"
+        }
+      ],
       "alpha=0.1": [
         {
           "rank": 1,
@@ -703,6 +919,58 @@
         {
           "rank": 10,
           "nrc": 1.047563,
+          "sequence_id": "gi|163869641|ref|NC_004037.2| Ovine adenovirus 7, complete genome"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.899493,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.926649,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.92746,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.947934,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.975394,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.986737,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.9876,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.990526,
+          "sequence_id": "gi|12084983|ref|NC_002642.1| Yaba-like disease virus, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.034924,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.038625,
           "sequence_id": "gi|163869641|ref|NC_004037.2| Ovine adenovirus 7, complete genome"
         }
       ],
@@ -864,6 +1132,58 @@
           "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
         }
       ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.763539,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.79782,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.802331,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.814008,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.870409,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.90897,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.167607,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.172696,
+          "sequence_id": "gi|12084983|ref|NC_002642.1| Yaba-like disease virus, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.274038,
+          "sequence_id": "gi|163869641|ref|NC_004037.2| Ovine adenovirus 7, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.277283,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        }
+      ],
       "alpha=0.1": [
         {
           "rank": 1,
@@ -968,6 +1288,1476 @@
           "sequence_id": "gi|632842269|ref|NC_024075.1| Cat Que Virus strain VN04-2108 nucleoprotein gene, complete cds"
         }
       ]
+    },
+    "k=9": {
+      "alpha=0.01": [
+        {
+          "rank": 1,
+          "nrc": 0.448737,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.502179,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.513101,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.569127,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.652116,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.851774,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.691874,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.708393,
+          "sequence_id": "gi|12084983|ref|NC_002642.1| Yaba-like disease virus, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.755177,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.784602,
+          "sequence_id": "gi|1003725869|ref|NC_029627.1| Lake Sarah-associated circular virus-50 isolate LSaCV-50-LSCO-2013, complete sequence"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.472091,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.503582,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.532488,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.584228,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.598158,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.771639,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.379756,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.389617,
+          "sequence_id": "gi|12084983|ref|NC_002642.1| Yaba-like disease virus, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.401209,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.411194,
+          "sequence_id": "gi|1003725869|ref|NC_029627.1| Lake Sarah-associated circular virus-50 isolate LSaCV-50-LSCO-2013, complete sequence"
+        }
+      ],
+      "alpha=0.1": [
+        {
+          "rank": 1,
+          "nrc": 0.499321,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.525625,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.555826,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.600031,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.601972,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.753595,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.263008,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.270543,
+          "sequence_id": "gi|12084983|ref|NC_002642.1| Yaba-like disease virus, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.272654,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.277844,
+          "sequence_id": "gi|1003725869|ref|NC_029627.1| Lake Sarah-associated circular virus-50 isolate LSaCV-50-LSCO-2013, complete sequence"
+        }
+      ],
+      "alpha=1.0": [
+        {
+          "rank": 1,
+          "nrc": 0.717692,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.741236,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.74638,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.754782,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.771595,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.821676,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.02228,
+          "sequence_id": "gi|1003725831|ref|NC_029622.1| Lake Sarah-associated circular virus-20 isolate LSaCV-20-LSMU-2013, complete sequence"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.022308,
+          "sequence_id": "gi|363539767|ref|NC_016072.1| Megavirus chiliensis, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.022328,
+          "sequence_id": "gi|632842269|ref|NC_024075.1| Cat Que Virus strain VN04-2108 nucleoprotein gene, complete cds"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.024694,
+          "sequence_id": "gi|1013949526|ref|NC_029800.1| Iris yellow spot virus non-structural protein (NSs) and nucleoprotein (N) genes, complete cds"
+        }
+      ]
+    },
+    "k=10": {
+      "alpha=0.01": [
+        {
+          "rank": 1,
+          "nrc": 0.205251,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.248384,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.259086,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.317667,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.375171,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.650481,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.339971,
+          "sequence_id": "gi|971748077|ref|NC_028836.1| Pseudomonas phage DL62, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.341065,
+          "sequence_id": "gi|14141972|ref|NC_002786.1| Maize rayado fino virus isolate Costa Rican, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.34313,
+          "sequence_id": "gi|9629255|ref|NC_001793.1| Oat blue dwarf virus complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.348415,
+          "sequence_id": "gi|84662653|ref|NC_007710.1| Xanthomonas oryzae phage OP2 DNA, complete genome"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.255523,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.295472,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.296183,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.357176,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.387025,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.590461,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.164433,
+          "sequence_id": "gi|9629255|ref|NC_001793.1| Oat blue dwarf virus complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.166091,
+          "sequence_id": "gi|971748077|ref|NC_028836.1| Pseudomonas phage DL62, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.168495,
+          "sequence_id": "gi|14141972|ref|NC_002786.1| Maize rayado fino virus isolate Costa Rican, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.171258,
+          "sequence_id": "gi|84662653|ref|NC_007710.1| Xanthomonas oryzae phage OP2 DNA, complete genome"
+        }
+      ],
+      "alpha=0.1": [
+        {
+          "rank": 1,
+          "nrc": 0.308131,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.345348,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.345721,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.399159,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.424733,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.593687,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.105119,
+          "sequence_id": "gi|9629255|ref|NC_001793.1| Oat blue dwarf virus complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.1079,
+          "sequence_id": "gi|971748077|ref|NC_028836.1| Pseudomonas phage DL62, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.110159,
+          "sequence_id": "gi|14141972|ref|NC_002786.1| Maize rayado fino virus isolate Costa Rican, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.111864,
+          "sequence_id": "gi|84662653|ref|NC_007710.1| Xanthomonas oryzae phage OP2 DNA, complete genome"
+        }
+      ],
+      "alpha=1.0": [
+        {
+          "rank": 1,
+          "nrc": 0.662775,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.685345,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.689986,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.694818,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.72805,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.779528,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.001584,
+          "sequence_id": "gi|632842269|ref|NC_024075.1| Cat Que Virus strain VN04-2108 nucleoprotein gene, complete cds"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.00179,
+          "sequence_id": "gi|1008861384|ref|NC_005030.2| Tobacco leaf curl Yunnan virus satellite DNA beta clone 17, complete sequence"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.003194,
+          "sequence_id": "gi|1003725831|ref|NC_029622.1| Lake Sarah-associated circular virus-20 isolate LSaCV-20-LSMU-2013, complete sequence"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.006114,
+          "sequence_id": "gi|146411809|ref|NC_009450.1| Honeysuckle yellow vein mosaic beta-[Japan:Miyizaki:2001] DNA, complete genome"
+        }
+      ]
+    },
+    "k=11": {
+      "alpha=0.01": [
+        {
+          "rank": 1,
+          "nrc": 0.094921,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.116855,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.155035,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.169525,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.246695,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.500028,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.095845,
+          "sequence_id": "gi|971748077|ref|NC_028836.1| Pseudomonas phage DL62, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.096272,
+          "sequence_id": "gi|84662653|ref|NC_007710.1| Xanthomonas oryzae phage OP2 DNA, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.097219,
+          "sequence_id": "gi|14141972|ref|NC_002786.1| Maize rayado fino virus isolate Costa Rican, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.107768,
+          "sequence_id": "gi|475994049|ref|NC_020902.1| Equine Pegivirus 1 isolate C0035, complete genome"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.160861,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.182275,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.214624,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.226475,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.29661,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.486855,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.045461,
+          "sequence_id": "gi|971748077|ref|NC_028836.1| Pseudomonas phage DL62, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.045701,
+          "sequence_id": "gi|84662653|ref|NC_007710.1| Xanthomonas oryzae phage OP2 DNA, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.046232,
+          "sequence_id": "gi|14141972|ref|NC_002786.1| Maize rayado fino virus isolate Costa Rican, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.049745,
+          "sequence_id": "gi|113478394|ref|NC_008311.1| Norovirus GV, complete genome"
+        }
+      ],
+      "alpha=0.1": [
+        {
+          "rank": 1,
+          "nrc": 0.227109,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.248757,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.2755,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.287946,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.35198,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.513172,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.028822,
+          "sequence_id": "gi|1003725831|ref|NC_029622.1| Lake Sarah-associated circular virus-20 isolate LSaCV-20-LSMU-2013, complete sequence"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.028967,
+          "sequence_id": "gi|971748077|ref|NC_028836.1| Pseudomonas phage DL62, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.029212,
+          "sequence_id": "gi|84662653|ref|NC_007710.1| Xanthomonas oryzae phage OP2 DNA, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.029513,
+          "sequence_id": "gi|14141972|ref|NC_002786.1| Maize rayado fino virus isolate Costa Rican, complete genome"
+        }
+      ],
+      "alpha=1.0": [
+        {
+          "rank": 1,
+          "nrc": 0.644718,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.664314,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.666404,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.679236,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.710259,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.769504,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.994777,
+          "sequence_id": "gi|1003725831|ref|NC_029622.1| Lake Sarah-associated circular virus-20 isolate LSaCV-20-LSMU-2013, complete sequence"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.997398,
+          "sequence_id": "gi|66396483|ref|NC_007067.1| Ageratum yellow vein China virus-associated DNA beta, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.999184,
+          "sequence_id": "gi|83571705|ref|NC_007639.1| Sida leaf curl virus-associated DNA beta, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.999986,
+          "sequence_id": "gi|1008861384|ref|NC_005030.2| Tobacco leaf curl Yunnan virus satellite DNA beta clone 17, complete sequence"
+        }
+      ]
+    },
+    "k=12": {
+      "alpha=0.01": [
+        {
+          "rank": 1,
+          "nrc": 0.057911,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.065522,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.081574,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.132959,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.223506,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.434978,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.024815,
+          "sequence_id": "gi|971748077|ref|NC_028836.1| Pseudomonas phage DL62, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.025609,
+          "sequence_id": "gi|50253405|ref|NC_005997.1| St Croix river virus segment 1 putative RNA-dependent RNA polymerase VP1 gene, complete cds"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.025791,
+          "sequence_id": "gi|84662653|ref|NC_007710.1| Xanthomonas oryzae phage OP2 DNA, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.026566,
+          "sequence_id": "gi|21427662|ref|NC_004020.1| Gremmeniella abietina RNA virus MS1 RNA 3, complete genome"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.130183,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.139425,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.152601,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.198579,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.281895,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.450692,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.011065,
+          "sequence_id": "gi|561142803|ref|NC_022962.1| Olive viral satellite RNA isolate Caltabellotta1 from Italy, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.011323,
+          "sequence_id": "gi|21427662|ref|NC_004020.1| Gremmeniella abietina RNA virus MS1 RNA 3, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.011485,
+          "sequence_id": "gi|971748077|ref|NC_028836.1| Pseudomonas phage DL62, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.011499,
+          "sequence_id": "gi|50253405|ref|NC_005997.1| St Croix river virus segment 1 putative RNA-dependent RNA polymerase VP1 gene, complete cds"
+        }
+      ],
+      "alpha=0.1": [
+        {
+          "rank": 1,
+          "nrc": 0.201689,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.212955,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.223383,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.265188,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.341095,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.488842,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.005253,
+          "sequence_id": "gi|561142803|ref|NC_022962.1| Olive viral satellite RNA isolate Caltabellotta1 from Italy, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.006727,
+          "sequence_id": "gi|21427662|ref|NC_004020.1| Gremmeniella abietina RNA virus MS1 RNA 3, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.006924,
+          "sequence_id": "gi|50253405|ref|NC_005997.1| St Croix river virus segment 1 putative RNA-dependent RNA polymerase VP1 gene, complete cds"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.007169,
+          "sequence_id": "gi|20428600|ref|NC_003752.1| Rice ragged stunt virus segment S6 P6 gene, complete cds"
+        }
+      ],
+      "alpha=1.0": [
+        {
+          "rank": 1,
+          "nrc": 0.641028,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.657656,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.658118,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.674583,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.709775,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.771102,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.996592,
+          "sequence_id": "gi|66396483|ref|NC_007067.1| Ageratum yellow vein China virus-associated DNA beta, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.997019,
+          "sequence_id": "gi|1008861384|ref|NC_005030.2| Tobacco leaf curl Yunnan virus satellite DNA beta clone 17, complete sequence"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.997247,
+          "sequence_id": "gi|1003725831|ref|NC_029622.1| Lake Sarah-associated circular virus-20 isolate LSaCV-20-LSMU-2013, complete sequence"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.997708,
+          "sequence_id": "gi|169822550|ref|NC_010437.1| Bat coronavirus 1A, complete genome"
+        }
+      ]
+    },
+    "k=13": {
+      "alpha=0.01": [
+        {
+          "rank": 1,
+          "nrc": 0.047635,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.050848,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.054546,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.126562,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.217758,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.424382,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.00535,
+          "sequence_id": "gi|223951472|ref|NC_012094.1| Sea Turtle Tornovirus 1 pop-variant STTV1-GA1, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.005684,
+          "sequence_id": "gi|84662653|ref|NC_007710.1| Xanthomonas oryzae phage OP2 DNA, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.005802,
+          "sequence_id": "gi|22855191|ref|NC_004176.1| Yellowtail ascites virus segment B, complete sequence"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.005808,
+          "sequence_id": "gi|985761536|ref|NC_029122.1| Tofla virus viral cRNA, complete genome, segment: S"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.122234,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.127801,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.130647,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.194154,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.278273,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.450724,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.001462,
+          "sequence_id": "gi|20522139|ref|NC_003810.1| Spinach latent virus putative movement protein and putative coat protein genes, complete cds"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.001749,
+          "sequence_id": "gi|1013949532|ref|NC_029802.1| Porcine picobirnavirus strain 221/04-16/ITA/2004 segment S, complete sequence"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.00225,
+          "sequence_id": "gi|1016470544|ref|NC_029804.1| East African cassava mosaic-like virus isolate DB_T1A segment DNA-A, complete sequence"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.002346,
+          "sequence_id": "gi|223951472|ref|NC_012094.1| Sea Turtle Tornovirus 1 pop-variant STTV1-GA1, complete genome"
+        }
+      ],
+      "alpha=0.1": [
+        {
+          "rank": 1,
+          "nrc": 0.195656,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.20378,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.205703,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.262031,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.338601,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.492454,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 1.00014,
+          "sequence_id": "gi|20522139|ref|NC_003810.1| Spinach latent virus putative movement protein and putative coat protein genes, complete cds"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.000674,
+          "sequence_id": "gi|1013949532|ref|NC_029802.1| Porcine picobirnavirus strain 221/04-16/ITA/2004 segment S, complete sequence"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.000912,
+          "sequence_id": "gi|1016470544|ref|NC_029804.1| East African cassava mosaic-like virus isolate DB_T1A segment DNA-A, complete sequence"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.001012,
+          "sequence_id": "gi|1003725912|ref|NC_029632.1| Lake Sarah-associated circular molecule 9 isolate LSaCM-9-LSLA-2013, complete sequence"
+        }
+      ],
+      "alpha=1.0": [
+        {
+          "rank": 1,
+          "nrc": 0.641779,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.656536,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.657875,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.675102,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.710374,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.777415,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.998004,
+          "sequence_id": "gi|169822550|ref|NC_010437.1| Bat coronavirus 1A, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.998598,
+          "sequence_id": "gi|1003725831|ref|NC_029622.1| Lake Sarah-associated circular virus-20 isolate LSaCV-20-LSMU-2013, complete sequence"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.998765,
+          "sequence_id": "gi|169822558|ref|NC_010438.1| Bat coronavirus HKU8, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.99905,
+          "sequence_id": "gi|971745655|ref|NC_028814.1| BtRf-AlphaCoV/HuB2013, complete genome"
+        }
+      ]
+    },
+    "k=14": {
+      "alpha=0.01": [
+        {
+          "rank": 1,
+          "nrc": 0.045307,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.045691,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.046774,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.125462,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.218088,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.432113,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.999578,
+          "sequence_id": "gi|21427660|ref|NC_004019.1| Gremmeniella abietina RNA virus MS1 RNA 2, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 1.0,
+          "sequence_id": "gi|20428604|ref|NC_003758.1| Rice ragged stunt virus autocatalytic protease precurser gene, complete cds"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.0,
+          "sequence_id": "gi|21427662|ref|NC_004020.1| Gremmeniella abietina RNA virus MS1 RNA 3, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.0,
+          "sequence_id": "gi|33867953|ref|NC_005075.1| Helicobasidium mompa No.17 dsRNA virus small segment, complete sequence"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.121049,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.124107,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.125198,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.194425,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.279188,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.461839,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.999258,
+          "sequence_id": "gi|21427660|ref|NC_004019.1| Gremmeniella abietina RNA virus MS1 RNA 2, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.999381,
+          "sequence_id": "gi|20522139|ref|NC_003810.1| Spinach latent virus putative movement protein and putative coat protein genes, complete cds"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.999972,
+          "sequence_id": "gi|9632989|ref|NC_000882.1| Pepper leaf curl virus, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.0,
+          "sequence_id": "gi|20428604|ref|NC_003758.1| Rice ragged stunt virus autocatalytic protease precurser gene, complete cds"
+        }
+      ],
+      "alpha=0.1": [
+        {
+          "rank": 1,
+          "nrc": 0.195376,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.201042,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.202276,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.262983,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.339954,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.504169,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.998978,
+          "sequence_id": "gi|20522139|ref|NC_003810.1| Spinach latent virus putative movement protein and putative coat protein genes, complete cds"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.999031,
+          "sequence_id": "gi|169822550|ref|NC_010437.1| Bat coronavirus 1A, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.999283,
+          "sequence_id": "gi|21427660|ref|NC_004019.1| Gremmeniella abietina RNA virus MS1 RNA 2, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.999463,
+          "sequence_id": "gi|9632989|ref|NC_000882.1| Pepper leaf curl virus, complete genome"
+        }
+      ],
+      "alpha=1.0": [
+        {
+          "rank": 1,
+          "nrc": 0.643804,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.657871,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.65929,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.676836,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.712252,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.784657,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.998459,
+          "sequence_id": "gi|169822550|ref|NC_010437.1| Bat coronavirus 1A, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.999164,
+          "sequence_id": "gi|169822558|ref|NC_010438.1| Bat coronavirus HKU8, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.999218,
+          "sequence_id": "gi|1003725831|ref|NC_029622.1| Lake Sarah-associated circular virus-20 isolate LSaCV-20-LSMU-2013, complete sequence"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.999342,
+          "sequence_id": "gi|971745655|ref|NC_028814.1| BtRf-AlphaCoV/HuB2013, complete genome"
+        }
+      ]
+    },
+    "k=15": {
+      "alpha=0.01": [
+        {
+          "rank": 1,
+          "nrc": 0.042034,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.045196,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.046122,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.126456,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.217786,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.446922,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.999757,
+          "sequence_id": "gi|20522139|ref|NC_003810.1| Spinach latent virus putative movement protein and putative coat protein genes, complete cds"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.999914,
+          "sequence_id": "gi|98960844|ref|NC_008037.1| Prune dwarf virus segment RNA2, complete sequence"
+        },
+        {
+          "rank": 9,
+          "nrc": 1.0,
+          "sequence_id": "ContaXT bug"
+        },
+        {
+          "rank": 10,
+          "nrc": 1.0,
+          "sequence_id": "gi|1003725824|ref|NC_029621.1| Lake Sarah-associated circular molecule 8 isolate LSaCM-8-LSGA-2013, complete sequence"
+        }
+      ],
+      "alpha=0.05": [
+        {
+          "rank": 1,
+          "nrc": 0.121764,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.121868,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.125386,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.19596,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.279473,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.477112,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.998595,
+          "sequence_id": "gi|169822550|ref|NC_010437.1| Bat coronavirus 1A, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.999071,
+          "sequence_id": "gi|20522139|ref|NC_003810.1| Spinach latent virus putative movement protein and putative coat protein genes, complete cds"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.999541,
+          "sequence_id": "gi|98960844|ref|NC_008037.1| Prune dwarf virus segment RNA2, complete sequence"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.999601,
+          "sequence_id": "gi|9632989|ref|NC_000882.1| Pepper leaf curl virus, complete genome"
+        }
+      ],
+      "alpha=0.1": [
+        {
+          "rank": 1,
+          "nrc": 0.196711,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.199881,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.203104,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.264888,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.34068,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.518873,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.998125,
+          "sequence_id": "gi|169822550|ref|NC_010437.1| Bat coronavirus 1A, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.99896,
+          "sequence_id": "gi|20522139|ref|NC_003810.1| Spinach latent virus putative movement protein and putative coat protein genes, complete cds"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.999209,
+          "sequence_id": "gi|169822558|ref|NC_010438.1| Bat coronavirus HKU8, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.999365,
+          "sequence_id": "gi|9632989|ref|NC_000882.1| Pepper leaf curl virus, complete genome"
+        }
+      ],
+      "alpha=1.0": [
+        {
+          "rank": 1,
+          "nrc": 0.646161,
+          "sequence_id": "NC_001348.1 Human herpesvirus 3, complete genome"
+        },
+        {
+          "rank": 2,
+          "nrc": 0.65943,
+          "sequence_id": "OR353425.1 Octopus vulgaris mitochondrion, complete genome"
+        },
+        {
+          "rank": 3,
+          "nrc": 0.661176,
+          "sequence_id": "NC_005831.2 Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 4,
+          "nrc": 0.678785,
+          "sequence_id": "Super ISS Si1240"
+        },
+        {
+          "rank": 5,
+          "nrc": 0.713638,
+          "sequence_id": "Super MUL 720"
+        },
+        {
+          "rank": 6,
+          "nrc": 0.792227,
+          "sequence_id": "gi|49169782|ref|NC_005831.2| Human Coronavirus NL63, complete genome"
+        },
+        {
+          "rank": 7,
+          "nrc": 0.998711,
+          "sequence_id": "gi|169822550|ref|NC_010437.1| Bat coronavirus 1A, complete genome"
+        },
+        {
+          "rank": 8,
+          "nrc": 0.999337,
+          "sequence_id": "gi|169822558|ref|NC_010438.1| Bat coronavirus HKU8, complete genome"
+        },
+        {
+          "rank": 9,
+          "nrc": 0.99947,
+          "sequence_id": "gi|971745655|ref|NC_028814.1| BtRf-AlphaCoV/HuB2013, complete genome"
+        },
+        {
+          "rank": 10,
+          "nrc": 0.999482,
+          "sequence_id": "gi|9632989|ref|NC_000882.1| Pepper leaf curl virus, complete genome"
+        }
+      ]
     }
   },
   "summary": {
@@ -977,6 +2767,11 @@
           "mean": 0.9996934560669456,
           "min": 0.939485,
           "max": 1.045103
+        },
+        "alpha=0.05": {
+          "mean": 0.9996475230125523,
+          "min": 0.939486,
+          "max": 1.037429
         },
         "alpha=0.1": {
           "mean": 0.9996274142259414,
@@ -995,6 +2790,11 @@
           "min": 0.937892,
           "max": 1.039003
         },
+        "alpha=0.05": {
+          "mean": 1.0002168493723849,
+          "min": 0.937895,
+          "max": 1.033162
+        },
         "alpha=0.1": {
           "mean": 1.0001949121338911,
           "min": 0.937898,
@@ -1011,6 +2811,11 @@
           "mean": 1.0041841548117154,
           "min": 0.936071,
           "max": 1.038296
+        },
+        "alpha=0.05": {
+          "mean": 1.0041262050209205,
+          "min": 0.93608,
+          "max": 1.038268
         },
         "alpha=0.1": {
           "mean": 1.0040910753138075,
@@ -1029,6 +2834,11 @@
           "min": 0.92645,
           "max": 1.055413
         },
+        "alpha=0.05": {
+          "mean": 1.0184939916317992,
+          "min": 0.926477,
+          "max": 1.0551
+        },
         "alpha=0.1": {
           "mean": 1.0183009623430963,
           "min": 0.926511,
@@ -1045,6 +2855,11 @@
           "mean": 1.1212677489539749,
           "min": 0.899369,
           "max": 1.217922
+        },
+        "alpha=0.05": {
+          "mean": 1.1035332384937238,
+          "min": 0.899493,
+          "max": 1.18576
         },
         "alpha=0.1": {
           "mean": 1.0942485355648535,
@@ -1063,6 +2878,11 @@
           "min": 0.760328,
           "max": 1.933223
         },
+        "alpha=0.05": {
+          "mean": 1.3962601046025105,
+          "min": 0.763539,
+          "max": 1.574699
+        },
         "alpha=0.1": {
           "mean": 1.3016378953974896,
           "min": 0.768389,
@@ -1073,50 +2893,260 @@
           "min": 0.827673,
           "max": 1.094066
         }
+      },
+      "k=9": {
+        "alpha=0.01": {
+          "mean": 1.831164489539749,
+          "min": 0.448737,
+          "max": 1.982213
+        },
+        "alpha=0.05": {
+          "mean": 1.4391435983263599,
+          "min": 0.472091,
+          "max": 1.531431
+        },
+        "alpha=0.1": {
+          "mean": 1.298260719665272,
+          "min": 0.499321,
+          "max": 1.3681
+        },
+        "alpha=1.0": {
+          "mean": 1.032148430962343,
+          "min": 0.717692,
+          "max": 1.053233
+        }
+      },
+      "k=10": {
+        "alpha=0.01": {
+          "mean": 1.4441078158995815,
+          "min": 0.205251,
+          "max": 1.639866
+        },
+        "alpha=0.05": {
+          "mean": 1.2107353012552302,
+          "min": 0.255523,
+          "max": 1.318835
+        },
+        "alpha=0.1": {
+          "mean": 1.1323228953974895,
+          "min": 0.308131,
+          "max": 1.207569
+        },
+        "alpha=1.0": {
+          "mean": 1.0063678661087867,
+          "min": 0.662775,
+          "max": 1.023767
+        }
+      },
+      "k=11": {
+        "alpha=0.01": {
+          "mean": 1.1457116736401673,
+          "min": 0.094921,
+          "max": 1.336047
+        },
+        "alpha=0.05": {
+          "mean": 1.0594799414225942,
+          "min": 0.160861,
+          "max": 1.157817
+        },
+        "alpha=0.1": {
+          "mean": 1.0321162133891213,
+          "min": 0.227109,
+          "max": 1.098573
+        },
+        "alpha=1.0": {
+          "mean": 0.9960316527196653,
+          "min": 0.644718,
+          "max": 1.008276
+        }
+      },
+      "k=12": {
+        "alpha=0.01": {
+          "mean": 1.029554539748954,
+          "min": 0.057911,
+          "max": 1.12915
+        },
+        "alpha=0.05": {
+          "mean": 1.003848748953975,
+          "min": 0.130183,
+          "max": 1.058328
+        },
+        "alpha=0.1": {
+          "mean": 0.9966187866108787,
+          "min": 0.201689,
+          "max": 1.035433
+        },
+        "alpha=1.0": {
+          "mean": 0.9930929414225942,
+          "min": 0.641028,
+          "max": 1.003541
+        }
+      },
+      "k=13": {
+        "alpha=0.01": {
+          "mean": 0.9934739916317992,
+          "min": 0.047635,
+          "max": 1.04404
+        },
+        "alpha=0.05": {
+          "mean": 0.9870721548117155,
+          "min": 0.122234,
+          "max": 1.019889
+        },
+        "alpha=0.1": {
+          "mean": 0.9861469372384937,
+          "min": 0.195656,
+          "max": 1.011828
+        },
+        "alpha=1.0": {
+          "mean": 0.9923964016736402,
+          "min": 0.641779,
+          "max": 1.001737
+        }
+      },
+      "k=14": {
+        "alpha=0.01": {
+          "mean": 0.9826673682008368,
+          "min": 0.045307,
+          "max": 1.024057
+        },
+        "alpha=0.05": {
+          "mean": 0.9821068786610878,
+          "min": 0.121049,
+          "max": 1.012691
+        },
+        "alpha=0.1": {
+          "mean": 0.9830798158995816,
+          "min": 0.195376,
+          "max": 1.008729
+        },
+        "alpha=1.0": {
+          "mean": 0.9922303263598327,
+          "min": 0.643804,
+          "max": 1.001345
+        }
+      },
+      "k=15": {
+        "alpha=0.01": {
+          "mean": 0.979968410041841,
+          "min": 0.042034,
+          "max": 1.008101
+        },
+        "alpha=0.05": {
+          "mean": 0.980960820083682,
+          "min": 0.121764,
+          "max": 1.004288
+        },
+        "alpha=0.1": {
+          "mean": 0.9824320167364017,
+          "min": 0.196711,
+          "max": 1.003046
+        },
+        "alpha=1.0": {
+          "mean": 0.9922787698744769,
+          "min": 0.646161,
+          "max": 1.000572
+        }
       }
     },
     "mean_nrc_table": [
       [
         "k / alpha",
         "0.01",
+        "0.05",
         "0.1",
         "1.0"
       ],
       [
         "3",
         "0.999693",
+        "0.999648",
         "0.999627",
         "0.999554"
       ],
       [
         "4",
         "1.000264",
+        "1.000217",
         "1.000195",
         "1.000089"
       ],
       [
         "5",
         "1.004184",
+        "1.004126",
         "1.004091",
         "1.003753"
       ],
       [
         "6",
         "1.018679",
+        "1.018494",
         "1.018301",
         "1.015466"
       ],
       [
         "7",
         "1.121268",
+        "1.103533",
         "1.094249",
         "1.047440"
       ],
       [
         "8",
         "1.630462",
+        "1.396260",
         "1.301638",
         "1.062557"
+      ],
+      [
+        "9",
+        "1.831164",
+        "1.439144",
+        "1.298261",
+        "1.032148"
+      ],
+      [
+        "10",
+        "1.444108",
+        "1.210735",
+        "1.132323",
+        "1.006368"
+      ],
+      [
+        "11",
+        "1.145712",
+        "1.059480",
+        "1.032116",
+        "0.996032"
+      ],
+      [
+        "12",
+        "1.029555",
+        "1.003849",
+        "0.996619",
+        "0.993093"
+      ],
+      [
+        "13",
+        "0.993474",
+        "0.987072",
+        "0.986147",
+        "0.992396"
+      ],
+      [
+        "14",
+        "0.982667",
+        "0.982107",
+        "0.983080",
+        "0.992230"
+      ],
+      [
+        "15",
+        "0.979968",
+        "0.980961",
+        "0.982432",
+        "0.992279"
       ]
     ]
   }
