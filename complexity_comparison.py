@@ -26,20 +26,37 @@ file2 = "complexity_profile/complexity_gi|49169782|ref|NC_005831.2|_Human_Corona
 positions1, complexity1, id1 = load_and_smooth(file1)
 positions2, complexity2, id2 = load_and_smooth(file2)
 
+# Calculate mean of each line
+mean1 = np.mean(complexity1)
+mean2 = np.mean(complexity2)
+
+# Calculate the combined median (single value) of both sequences
+combined_values = np.concatenate([complexity1, complexity2])
+overall_median = np.median(combined_values)
+
 # Plot
 plt.figure(figsize=(15, 6))
 plt.plot(positions1, complexity1, label=f"{id1}", color='green')
 plt.plot(positions2, complexity2, label=f"{id2}", color='orange')
-plt.title(f"Smoothed Complexity Profiles (window=101): {id1} vs {id2}")
+
+# Plot mean lines
+plt.axhline(y=mean1, color='darkgreen', linestyle='--', label=f'Mean of {id1}: {mean1:.3f}')
+plt.axhline(y=mean2, color='darkorange', linestyle='--', label=f'Mean of {id2}: {mean2:.3f}')
+
+# Plot overall median line (straight horizontal line)
+plt.axhline(y=overall_median, color='red', linestyle='-', label=f'Median of both sequences: {overall_median:.3f}')
+
+plt.title(f"Complexity Profiles Comparison with Mean and Median")
 plt.xlabel("Position")
 plt.ylabel("Complexity (bits)")
-plt.ylim(0,2.0)
+plt.ylim(0, 2.0)
 plt.grid(True, linestyle='--')
 plt.legend()
 
 plt.tight_layout()
-output_path = "complexity_profile_plot/comparison_smoothed_large_window.png"
+output_path = "complexity_profile_plot/comparison_with_mean_median.png"
+os.makedirs(os.path.dirname(output_path), exist_ok=True)
 plt.savefig(output_path)
 plt.show()
 
-print(f"Saved smoothed comparison plot to {output_path}")
+print(f"Saved comparison plot with means and median to {output_path}")
